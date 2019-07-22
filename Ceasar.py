@@ -16,11 +16,33 @@ for i in range(n):
     loc = alpha.find(c)
     print(i, c, loc)
     newloc = (loc + shift_val)%length
-    # if newloc >= 26:
-    #     newloc -= 26 this helps go past 14 but still if it goes out of range we get an error therfore we use modulus
     str_out += alpha[newloc]
     print(newloc, str_out)
 
 
 print("Obfuscated version:", str_out)
+
+
+
+
+
+# Now, we decipher ther ceasar encryption
+
+Ciphertext =  input("Enter the Ciphertext:")
+
+n = len(Ciphertext)
+secret = " "
+
+for i in range(25):
+    for l in range(n):
+        c = Ciphertext[l]
+        loc = alpha.find(c)
+        newloc = (loc + i)%length
+        secret += alpha[newloc]
+    print(i, secret)
+    secret = " "
+
+
+
+
 
